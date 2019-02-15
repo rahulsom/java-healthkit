@@ -1,0 +1,11 @@
+# Gradle template
+.gradle
+build/
+.gradletasknamecache
+
+# JetBrains template
+.idea/
+*.iws
+*.ipr
+*.iml
+out/

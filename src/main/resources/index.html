@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+</head>
+<body>
+<div id="graphdiv" style="width: 1600px; height: 500px;"></div>
+<div id="text">$text</div>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['annotatedtimeline']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('date', 'Date');
+    data.addColumn('number', 'HeartRate');
+    data.addColumn('string', 'title1');
+    data.addColumn('string', 'text1');
+
+    data.addRows([
+      $data
+    ]);
+
+    var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('graphdiv'));
+    chart.draw(data, {displayAnnotations: true});
+  }
+</script>
+</body>
+</html>
